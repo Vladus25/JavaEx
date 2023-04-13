@@ -1,0 +1,16 @@
+package EsercitazioneArray;
+
+public class Main {
+
+	public static void main(String[] args) {
+		
+		int ottoValori[] = new int[8];
+		
+		try {
+			ottoValori[8] = 10;
+			System.out.println("Fine Programma");
+		}
+		catch()
+	}
+
+}

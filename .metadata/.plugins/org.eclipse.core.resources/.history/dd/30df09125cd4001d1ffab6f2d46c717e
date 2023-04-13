@@ -1,0 +1,10 @@
+package EsercizioCollection;
+
+public class EsArrayList {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

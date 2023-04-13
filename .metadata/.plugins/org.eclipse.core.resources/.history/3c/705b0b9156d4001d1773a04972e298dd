@@ -1,0 +1,11 @@
+package EsercitazioneTryCatch;
+
+public class MainException {
+
+	public static void main(String[] args) {
+		Utente u = new Utente("Gianpiero");
+		u.setPassword("abc");
+
+	}
+
+}

@@ -1,0 +1,8 @@
+package Esercizio2;
+
+public class CalcolatoreImpl {
+	@Override
+	public int esegueOperazione(int valore) {
+		return valore *2;
+	}
+}

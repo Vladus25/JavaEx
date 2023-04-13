@@ -1,0 +1,30 @@
+package com.test.Service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.test.Entity.UserEntity;
+import com.test.Repository.UserRepository;
+
+@Service
+public class UserService {
+	
+	@Autowired
+	private UserRepository repo;
+	
+	public List<UserEntity> getUsers() {
+		return repo.findAll();
+	}
+	
+	public UserEntity addUsers(UserEntity user) {
+		return repo.save(user);
+	}
+	
+	public UserEntity getUserById(Long id) {
+		return repo.findById(id).orElseThrow(() -> new UserNotFoundException("User not found with id: " + id));
+	}
+	
+	
+}

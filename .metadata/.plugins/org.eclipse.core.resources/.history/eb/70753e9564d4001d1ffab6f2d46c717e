@@ -1,0 +1,55 @@
+package EsMappe;
+
+import java.util.HashMap;
+
+class Persona{
+	private String nome;
+	private String cognome;
+	private String matricola;
+	
+	public Persona(String nome, String cognome, String matricola) {
+		super();
+		this.nome = nome;
+		this.cognome = cognome;
+		this.matricola = matricola;
+	}
+
+	public String getMatricola() {
+		return matricola;
+	}
+
+	public void setMatricola(String matricola) {
+		this.matricola = matricola;
+	}
+
+	@Override
+	public String toString() {
+		return "Persona [nome=" + nome + ", cognome=" + cognome + ", matricola=" + matricola + "]";
+	}
+	
+	
+}
+
+
+public class Main {
+	
+	public static void main(String[] args) {
+		Persona rossi = new Persona("Paolo", "Rossi", "123");
+		Persona bianchi = new Persona("Carlo", "Bianchi", "12345");
+		Persona neri = new Persona("Gigi", "Nerii", "1234567");
+		
+		HashMap<String, Persona> mappa = new HashMap<String, Persona>(); 
+		mappa.put(rossi.getMatricola(), rossi);
+		mappa.put(bianchi.getMatricola(), bianchi);
+		mappa.put(neri.getMatricola(), neri);
+		
+		Persona p = mappa.get("123");
+		System.out.println(p);
+		System.out.println("*****");
+		for(String chiave: mappa.keySet()) {
+			System.out.println(chiave);
+		}
+		
+	}
+
+}

@@ -1,0 +1,65 @@
+package com.test.Entity;
+
+import java.util.Set;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
+import jakarta.persistence.Table;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@AllArgsConstructor
+@NoArgsConstructor
+@Table(name = "Users")
+@Entity
+public class UserEntity {
+	
+	@Id
+	@GeneratedValue()
+	private int id;
+	private String nome;
+	private int age;
+	@JsonIgnore
+	@OneToMany(mappedBy="users")
+	private Set<CarsEntity> auto;
+	
+	
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+	
+
+	public String getNome() {
+		return nome;
+	}
+
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+
+	public int getAge() {
+		return age;
+	}
+
+	public void setAge(int age) {
+		this.age = age;
+	}
+
+	public Set<CarsEntity> getAuto() {
+		return this.auto;
+	}
+
+	public void setAuto(Set<CarsEntity> auto) {
+		this.auto = auto;
+	}
+	
+}

@@ -1,0 +1,45 @@
+package com.test.Service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.test.Entity.CarsEntity;
+import com.test.Entity.*;
+import com.test.Repository.CarsRepository;
+
+@Service
+public class CarsService {
+	
+	@Autowired
+	private CarsRepository repo;
+	
+	@Autowired
+    private UserService serv;
+	
+	public List<CarsEntity> getCars() {
+		return (List<CarsEntity>) repo.findAll();
+	}
+	
+	public List<CarsEntity> getAllCarsByUserIdAndNullUserId(int userId) {
+        List<CarsEntity> carsByUserId = carRepository.findCarsByUserId(userId);
+        List<CarsEntity> carsByNullUserId = carRepository.findCarsByUsersIsNull();
+        List<CarsEntity> allCars = new ArrayList<>(carsByUserId);
+        allCars.addAll(carsByNullUserId);
+        return allCars;
+    }
+	
+	public CarsEntity assignUserToCar(int userId, Long carId) {
+        CarsEntity car = repo.findById(carId)
+                .orElseThrow();
+
+        UserEntity user = new UserEntity();
+        user.setId(userId);
+        car.setUsers(user);
+
+        return repo.save(car);
+    }
+	
+	
+}

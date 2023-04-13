@@ -1,0 +1,20 @@
+package com.test.Service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.test.Entity.CarsEntity;
+import com.test.Repository.CarsRepository;
+
+@Service
+public class CarsService {
+	
+	@Autowired
+	private CarsRepository repo;
+	
+	public List<CarsEntity> getCars() {
+		return (List<CarsEntity>) repo.findAll();
+	}
+}

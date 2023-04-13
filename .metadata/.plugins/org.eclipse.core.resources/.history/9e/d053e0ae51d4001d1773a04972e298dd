@@ -1,0 +1,7 @@
+package Esercizio2;
+
+public class CalcolatoreImpl {
+	public int esegueOperazione(int valore) {
+		return valore *2;
+	}
+}

@@ -1,0 +1,13 @@
+package com.test.Repository;
+
+import java.util.List;
+
+import org.springframework.data.repository.CrudRepository;
+
+import com.test.Entity.CarsEntity;
+import com.test.Entity.UserEntity;
+
+public interface CarsRepository  extends CrudRepository<CarsEntity, Long> {
+	List<CarsEntity> findByUsersId(int userId);
+    List<CarsEntity> findByUsersIsNull();
+}

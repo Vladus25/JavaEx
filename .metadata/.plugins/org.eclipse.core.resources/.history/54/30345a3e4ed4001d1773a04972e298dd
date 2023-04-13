@@ -1,0 +1,8 @@
+package Esercitazione;
+
+public abstract class FiguraBidimensionale {
+	int dim1;
+	int dim2;
+	
+	abstract int calcolaArea();
+}

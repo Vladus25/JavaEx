@@ -1,0 +1,9 @@
+package EsercizioGenerics;
+
+public class Main {
+
+	public static void main(String[] args) {
+		Bottiglia<Aqua> acq = new Bottiglia<Aqua>(new Aqua());
+	}
+
+}

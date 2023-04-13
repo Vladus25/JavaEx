@@ -1,0 +1,47 @@
+package com.test.Controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.test.Service.UserService;
+import com.test.Entity.UserEntity;
+
+@RestController
+public class UserController {
+	
+	@Autowired
+	private UserService serv;
+	
+	@GetMapping("/getAllUsers")
+	public List<UserEntity> getUsers() {
+		return serv.getUsers();
+	}
+	
+	
+	
+	@PostMapping("/addUser")
+	public ResponseEntity<String> addUser(
+	    @RequestParam("id") Long id, 
+	    @RequestParam("name") String name, 
+	    @RequestParam("age") int age) {
+	    
+	    // crea un nuovo oggetto UserEntity
+	    UserEntity newUser = new UserEntity();
+	    newUser.setId(id);
+	    newUser.setName(nome);
+	    newUser.setAge(age);
+
+	    // aggiungi il nuovo utente utilizzando il metodo "addUsers" della classe "UserService"
+	    UserEntity addedUser = userService.addUsers(newUser);
+
+	    // restituisci una risposta HTTP 200 OK con un messaggio di successo
+	    return ResponseEntity.ok("Utente con id " + id + " aggiunto correttamente");
+	}
+}

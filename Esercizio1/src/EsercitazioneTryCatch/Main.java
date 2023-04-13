@@ -1,0 +1,27 @@
+package EsercitazioneTryCatch;
+
+public class Main {
+
+	public static void main(String[] args) {
+		
+		int ottoValori[] = new int[8];
+		
+		try {
+			ottoValori[8] = 10/0;
+			System.out.println("Fine blocco try");
+		}
+		catch(ArrayIndexOutOfBoundsException e) {
+			System.out.println("Posizione non trovata");
+		}
+		catch(ArithmeticException e) {
+			System.out.println("Opperazione non valida");
+		}
+		finally{
+			System.out.println("Esecuzione del finally");
+			System.out.println("Fine blocco try");
+		}
+		
+		System.out.println("Fine Programma");
+	}
+
+}

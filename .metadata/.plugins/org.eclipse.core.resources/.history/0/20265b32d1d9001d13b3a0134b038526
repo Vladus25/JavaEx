@@ -1,0 +1,9 @@
+package com.test.Repository;
+
+import org.springframework.data.repository.CrudRepository;
+
+import com.test.Entity.CarsEntity;
+
+public interface CarsRepository  extends CrudRepository<CatsEntity, Long> {
+
+}

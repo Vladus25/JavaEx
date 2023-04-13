@@ -1,0 +1,52 @@
+package com.test.Service;
+
+import java.util.List;
+import java.util.Optional;
+import java.util.HashSet;
+
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.test.Entity.CarsEntity;
+import com.test.Entity.UserEntity;
+import com.test.Repository.CarsRepository;
+import com.test.Repository.UserRepository;
+import com.test.Exception.*;
+
+@Service
+public class UserService {
+	
+	@Autowired
+	private UserRepository repo;
+	
+	@Autowired
+	
+	public List<UserEntity> getUsers() {
+		return repo.findAll();
+	}
+	
+	
+	public UserEntity getUserByIdForCar(int id) {
+        Optional<UserEntity> optionalUser = repo.findById(id);
+        if (optionalUser.isPresent()) {
+            UserEntity user = optionalUser.get();
+            List<CarsEntity> cars = repo.findCarsByUserId(user.getId());
+            user.setAuto(new HashSet<>(cars));
+            return user;
+        } else {
+            throw new RuntimeException("User not found with id " + id);
+        }
+    }
+	
+	public UserEntity addUsers(UserEntity user) {
+		return repo.save(user);
+	}
+	
+	public UserEntity getUserById(Long id) {
+		return repo.findById(id.intValue())
+		           .orElseThrow(() -> new UserNotFoundException("User not found with id: " + id));
+	}
+	
+	
+}

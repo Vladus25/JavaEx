@@ -1,0 +1,7 @@
+package com.test.Repository;
+
+import com.test.Entity.CarsEntity;
+
+public interface CarsRepository  extends CrudRepository<CatsEntity, Long> {
+
+}

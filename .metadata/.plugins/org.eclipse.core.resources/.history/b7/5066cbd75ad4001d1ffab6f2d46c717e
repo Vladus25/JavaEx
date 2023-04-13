@@ -1,0 +1,5 @@
+package EsercizioGenerics;
+
+public class Bottiglia <T> {
+	
+}

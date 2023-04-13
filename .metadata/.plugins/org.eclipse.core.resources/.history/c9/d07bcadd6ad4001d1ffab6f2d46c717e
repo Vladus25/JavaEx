@@ -1,0 +1,5 @@
+package EsercizioArticolo;
+
+public interface Articolo {
+
+}

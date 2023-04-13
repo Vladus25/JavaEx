@@ -1,0 +1,13 @@
+package com.test.Repository;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
+
+import com.test.Entity.UserEntity;
+
+public interface UserRepository extends JpaRepository<UserEntity, Integer>{
+	@Query("SELECT u FROM UserEntity u LEFT JOIN FETCH u.auto WHERE u.id = :id")
+    UserEntity findUserWithCarsById(@Param("id") int id);
+}
+

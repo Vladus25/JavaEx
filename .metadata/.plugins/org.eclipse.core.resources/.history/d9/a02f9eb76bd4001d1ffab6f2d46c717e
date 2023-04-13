@@ -1,0 +1,35 @@
+package EsercizioArticolo;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Catalogo<E extends Articolo> {
+    private List<E> articoli;
+
+    public Catalogo() {
+        articoli = new ArrayList<>();
+    }
+
+    public void aggiungiArticolo(E art) {
+        articoli.add(art);
+    }
+
+    public List<E> getArticoliSottoPrezzo(double prezzo) {
+        List<E> sottoPrezzo = new ArrayList<>();
+        for (E art : articoli) {
+            if (art.getPrezzo() < prezzo) {
+                sottoPrezzo.add(art);
+            }
+        }
+        return sottoPrezzo;
+    }
+
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        for (E art : articoli) {
+            sb.append(art.toString()).append("\n");
+        }
+        return sb.toString();
+    }
+}
+

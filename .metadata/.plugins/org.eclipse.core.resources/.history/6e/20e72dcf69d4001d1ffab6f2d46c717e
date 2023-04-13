@@ -1,0 +1,16 @@
+package EsercizioArticolo;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.Test;
+
+class CatalogoTest {
+
+	@Test
+	void test() {
+		System.out.println("Primo test");
+		String string1 = "Qualcosa";
+		assertEquals("Qualcosa", string1);
+	}
+
+}

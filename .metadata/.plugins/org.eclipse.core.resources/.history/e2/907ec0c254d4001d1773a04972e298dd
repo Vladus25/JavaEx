@@ -1,0 +1,13 @@
+package EsercitazioneTryCatch;
+
+public class Utente {
+	private String username;
+	private String password;
+	
+	public Utente(String username) {
+		super();
+		this.username = username;
+	}
+	
+	
+}

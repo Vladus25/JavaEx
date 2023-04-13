@@ -1,0 +1,15 @@
+package EsercizioCollection;
+
+import java.util.ArrayList;
+
+public class EsArrayList {
+
+	public static void main(String[] args) {
+		ArrayList <String> nomi = new ArrayList<String>();
+		nomi.add("Paola");
+		nomi.add("Luca");
+		nomi.add("Carlo");
+
+	}
+
+}

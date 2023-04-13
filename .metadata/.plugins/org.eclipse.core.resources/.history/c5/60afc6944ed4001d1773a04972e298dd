@@ -1,0 +1,11 @@
+package Esercitazione;
+
+public class Triangolo extends FiguraBidimensionale {
+
+	@Override
+	int calcolaArea() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+}

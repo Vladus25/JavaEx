@@ -1,0 +1,10 @@
+package Esercitazione;
+
+public class Main {
+
+	public static void main(String[] args) {
+		Triangolo t = new Triangolo(4,4)
+
+	}
+
+}

@@ -1,0 +1,16 @@
+package EsMappe;
+
+class Persona{
+	private String nome;
+	private String cognome;
+	private String matricola;
+}
+
+public class Main {
+	
+	public static void main(String[] args) {
+		
+
+	}
+
+}
